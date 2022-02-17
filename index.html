@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script
+      src="https://kit.fontawesome.com/16c8827c84.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              clifford: "#da373d",
+            },
+          },
+        },
+      };
+    </script>
+    <title>Starlink</title>
+  </head>
+  <body class="relative bg-[#F6F5FA] sm:bg-white">
+    <div
+      onclick="sidebarRemover()"
+      id="black-page"
+      class="absolute top-0 left-0 w-[100%] h-[100%] bg-black/25 z-10 hidden"
+    ></div>
+    <!-- mini-sidebar -->
+    <div
+      id="miniSidebar"
+      class="bg-white absolute z-20 top-0 left-0 xl:-left-[300px] -translate-x-[270px] h-full"
+    >
+      <div class="sidebar w-[270px] flex justify-center pt-10 h-full">
+        <div class="w-[200px] flex flex-col space-y-6">
+          <a href="#">
+            <img src="./images/logo.png" class="w-[200px]" alt="" />
+          </a>
+          <button
+            class="flex items-center space-x-3 hover:bg-[#1A2749] hover:text-white rounded-md p-2"
+          >
+            <i class="fa-solid fa-table-columns text-xl"></i>
+            <p class="text-xl">Dashboard</p>
+          </button>
+          <button
+            class="flex items-center space-x-3 hover:bg-[#1A2749] hover:text-white rounded-md p-2"
+          >
+            <i class="fas fa-chart-line text-xl"></i>
+            <p class="text-xl">Timeline</p>
+          </button>
+          <button
+            class="flex items-center space-x-3 hover:bg-[#1A2749] hover:text-white rounded-md p-2"
+          >
+            <i class="fas fa-file text-xl"></i>
+            <p class="text-xl">Document</p>
+          </button>
+          <button
+            class="flex items-center space-x-3 hover:bg-[#1A2749] hover:text-white rounded-md p-2"
+          >
+            <i class="fas fa-wrench"></i>
+            <p class="text-xl">Warranty</p>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- /mini-sidebar -->
+    <main class="flex items-start h-full relative w-full">
+      <div class="sidebar hidden w-[300px] xl:flex justify-center pt-10 h-full">
+        <div class="w-[200px] flex flex-col space-y-6 flex-wrap">
+          <a href="#">
+            <img src="./images/logo.png" class="w-[200px]" alt="" />
+          </a>
+          <button
+            class="flex items-center space-x-3 hover:bg-[#1A2749] hover:text-white rounded-md p-2"
+          >
+            <i class="fa-solid fa-table-columns text-xl"></i>
+            <p class="text-xl">Dashboard</p>
+          </button>
+          <button
+            class="flex items-center space-x-3 hover:bg-[#1A2749] hover:text-white rounded-md p-2"
+          >
+            <i class="fas fa-chart-line text-xl"></i>
+            <p class="text-xl">Timeline</p>
+          </button>
+          <button
+            class="flex items-center space-x-3 hover:bg-[#1A2749] hover:text-white rounded-md p-2"
+          >
+            <i class="fas fa-file text-xl"></i>
+            <p class="text-xl">Document</p>
+          </button>
+          <button
+            class="flex items-center space-x-3 hover:bg-[#1A2749] hover:text-white rounded-md p-2"
+          >
+            <i class="fas fa-wrench"></i>
+            <p class="text-xl">Warranty</p>
+          </button>
+        </div>
+      </div>
+      <div class="body h-full bg-[#F6F5FA]">
+        <div class="ml-5 w-[97%] h-full">
+          <div class="flex items-center justify-between">
+            <button
+              class="hidden xl:flex items-center space-x-3 rounded-md p-2 mb-10 mt-5"
+            >
+              <i class="fa-solid fa-table-columns text-3xl"></i>
+              <p class="text-3xl font-medium">Dashboard</p>
+            </button>
+            <button
+              onclick="sidebarHandler()"
+              class="sidebar-opener xl:hidden flex items-center space-x-3 rounded-md p-2 mb-10 mt-5"
+            >
+              <i class="fa-solid fa-table-columns text-3xl"></i>
+              <p class="text-3xl font-medium">Dashboard</p>
+            </button>
+            <div class="flex items-center space-x-3">
+              <div class="bg-[#4D87C4] p-2 rounded-full px-3">
+                <a href="#" class="text-xl font-medium text-white">JT</a>
+              </div>
+              <p class="text-xl font-normal hidden sm:block">Jane Thomson</p>
+            </div>
+          </div>
+          <div
+            class="banner w-full flex-wrap shrink-0 flex items-center bg-[#5285C4] rounded-md mb-3"
+          >
+            <div class="leading-10 text-white ml-16 my-16">
+              <h2 class="text-xl sm:text-2xl">Welcome Back, Jane</h2>
+              <p class="hidden sm:inline-block">
+                Here is whats happening with your house today
+              </p>
+            </div>
+            <div
+              class="address ml-auto text-white text-right mr-8 leading-7 text-sm sm:text-base"
+            >
+              <p>12149 Fall Creek Court</p>
+              <p>Hudson, FL34669</p>
+              <p>Pine Ridge Community</p>
+              <p>Saratoga Plan</p>
+              <p>1,425 sq ft, Elevation B</p>
+              <p>Lot Number 0001</p>
+            </div>
+            <div>
+              <img
+                src="./images/house.jpg"
+                class="xl:w-[330px] rounded-md xl:inline-block md:w-full md:w-full"
+                alt=""
+              />
+            </div>
+          </div>
+
+          <div class="hidden sm:block home-progress bg-white rounded-md pb-10">
+            <h3 class="text-xl pl-5 pt-5 font-medium">Home progress</h3>
+            <div
+              class="hidden sm:flex items-center justify-between w-[85%] mx-auto"
+            >
+              <div
+                class="h-[10px] w-[650px] flex items-center rounded-full self-end mb-5"
+              >
+                <button class="h-full w-1/4 bg-blue-400 relative">
+                  <div
+                    class="absolute -top-[62px] -left-[12px] flex flex-col items-center space-y-3"
+                  >
+                    <div>
+                      <i class="fas fa-clipboard text-[45px] text-blue-400"></i>
+                    </div>
+                    <div
+                      class="dot inline-block bg-blue-400 w-[20px] h-[20px] rounded-full"
+                    ></div>
+                  </div>
+                </button>
+                <button class="h-full w-1/4 bg-gray-200 relative">
+                  <div
+                    class="absolute -top-[62px] -left-[12px] flex flex-col items-center space-y-3"
+                  >
+                    <div>
+                      <i
+                        class="fas fa-dollar-sign text-[45px] text-green-600"
+                      ></i>
+                    </div>
+                    <div
+                      class="dot inline-block bg-green-600 w-[20px] h-[20px] rounded-full"
+                    ></div>
+                  </div>
+                </button>
+                <button class="h-full w-1/4 bg-gray-200 relative">
+                  <div
+                    class="absolute -top-[62px] -left-[12px] flex flex-col items-center space-y-3"
+                  >
+                    <div>
+                      <i class="fas fa-hammer text-[45px] text-gray-200"></i>
+                    </div>
+                    <div
+                      class="dot inline-block bg-gray-200 w-[20px] h-[20px] rounded-full"
+                    ></div>
+                  </div>
+                </button>
+                <button class="h-full w-1/4 bg-transparent relative">
+                  <div
+                    class="absolute -top-[62px] -left-[20px] flex flex-col items-center space-y-3"
+                  >
+                    <div>
+                      <i class="fas fa-home-alt text-[45px] text-gray-200"></i>
+                    </div>
+                    <div
+                      class="dot inline-block bg-gray-200 w-[20px] h-[20px] rounded-full"
+                    ></div>
+                  </div>
+                </button>
+              </div>
+              <div class="text-center hidden sm:inline-block">
+                <p class="text-[90px] font-bold">76%</p>
+                <p class="text-xl">Total completed</p>
+              </div>
+            </div>
+          </div>
+          <div class="sm:hidden">
+            <div class="home-progress bg-white rounded-md">
+              <h3 class="text-xl pl-5 pt-5 font-medium pb-28">
+                Home progress Updated
+              </h3>
+              <div
+                class="h-[10px] w-[70%] ml-20 flex items-center rounded-full self-end mb-5"
+              >
+                <button class="h-full w-1/4 bg-blue-400 relative">
+                  <div
+                    class="absolute -top-[55px] -left-[12px] flex flex-col items-center space-y-3"
+                  >
+                    <div>
+                      <i class="fas fa-clipboard text-[35px] text-blue-400"></i>
+                    </div>
+                    <div
+                      class="dot inline-block bg-blue-400 w-[20px] h-[20px] rounded-full"
+                    ></div>
+                  </div>
+                </button>
+                <button class="h-full w-1/4 bg-gray-200 relative">
+                  <div
+                    class="absolute -top-[55px] -left-[12px] flex flex-col items-center space-y-3"
+                  >
+                    <div>
+                      <i
+                        class="fas fa-dollar-sign text-[35px] text-green-600"
+                      ></i>
+                    </div>
+                    <div
+                      class="dot inline-block bg-green-600 w-[20px] h-[20px] rounded-full"
+                    ></div>
+                  </div>
+                </button>
+                <button class="h-full w-1/4 bg-gray-200 relative">
+                  <div
+                    class="absolute -top-[55px] -left-[12px] flex flex-col items-center space-y-3"
+                  >
+                    <div>
+                      <i class="fas fa-hammer text-[35px] text-gray-200"></i>
+                    </div>
+                    <div
+                      class="dot inline-block bg-gray-200 w-[20px] h-[20px] rounded-full"
+                    ></div>
+                  </div>
+                </button>
+                <button class="h-full w-1/4 bg-transparent relative">
+                  <div
+                    class="absolute -top-[55px] -left-[20px] flex flex-col items-center space-y-3"
+                  >
+                    <div>
+                      <i class="fas fa-home-alt text-[35px] text-gray-200"></i>
+                    </div>
+                    <div
+                      class="dot inline-block bg-gray-200 w-[20px] h-[20px] rounded-full"
+                    ></div>
+                  </div>
+                </button>
+              </div>
+              <div class="text-center">
+                <p class="text-[90px] font-bold">76%</p>
+                <p class="text-xl">Total completed</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- /// -->
+
+          <div
+            class="flex items-start lg:flex-nowrap flex-wrap justify-between mt-10 h-full"
+          >
+            <div class="lg:w-1/2 w-full px-5 pt-6 bg-white mr-1">
+              <h2 class="text-2xl mb-5">Construction Progress</h2>
+              <div class="flex items-center bg-green-100 my-1 p-3 rounded-md">
+                <button class="bg-green-500 rounded-full px-1 ml-6 mr-6">
+                  <i class="fas fa-check text-white text-xl"></i>
+                </button>
+                <div>
+                  <p class="font-medium">Pre-construction meeting</p>
+                </div>
+                <div
+                  class="ml-auto bg-green-500 text-white px-2 font-medium rounded-full hidden sm:inline-block"
+                >
+                  <p>completed</p>
+                </div>
+                <i
+                  class="fas fa-check text-green-900 text-xl sm:hidden ml-auto px-5"
+                ></i>
+                <div class="sm:ml-6 sm:mr-6 sm:inline-block hidden ml-auto">
+                  <p class="font-bold">2/13/2020</p>
+                </div>
+                <div class="sm:ml-6 sm:mr-6 sm:hidden inline-block ml-auto">
+                  <p class="font-bold">2/13/20</p>
+                </div>
+              </div>
+              <div class="flex items-center bg-green-100 my-1 p-3 rounded-md">
+                <button class="bg-green-500 rounded-full px-1 ml-6 mr-6">
+                  <i class="fas fa-check text-white text-xl"></i>
+                </button>
+                <div>
+                  <p class="font-medium">Pre-construction meeting</p>
+                </div>
+                <div
+                  class="ml-auto bg-green-500 text-white px-2 font-medium rounded-full hidden sm:inline-block"
+                >
+                  <p>completed</p>
+                </div>
+                <i
+                  class="fas fa-check text-green-900 text-xl sm:hidden ml-auto px-5"
+                ></i>
+                <div class="sm:ml-6 sm:mr-6 sm:inline-block hidden ml-auto">
+                  <p class="font-bold">2/13/2020</p>
+                </div>
+                <div class="sm:ml-6 sm:mr-6 sm:hidden inline-block ml-auto">
+                  <p class="font-bold">2/13/20</p>
+                </div>
+              </div>
+              <div class="flex items-center bg-green-100 my-1 p-3 rounded-md">
+                <button class="bg-green-500 rounded-full px-1 ml-6 mr-6">
+                  <i class="fas fa-check text-white text-xl"></i>
+                </button>
+                <div>
+                  <p class="font-medium">Pre-construction meeting</p>
+                </div>
+                <div
+                  class="ml-auto bg-green-500 text-white px-2 font-medium rounded-full hidden sm:inline-block"
+                >
+                  <p>completed</p>
+                </div>
+                <i
+                  class="fas fa-check text-green-900 text-xl sm:hidden ml-auto px-5"
+                ></i>
+                <div class="sm:ml-6 sm:mr-6 sm:inline-block hidden ml-auto">
+                  <p class="font-bold">2/13/2020</p>
+                </div>
+                <div class="sm:ml-6 sm:mr-6 sm:hidden inline-block ml-auto">
+                  <p class="font-bold">2/13/20</p>
+                </div>
+              </div>
+              <div class="flex items-center bg-green-100 my-1 p-3 rounded-md">
+                <button class="bg-green-500 rounded-full px-1 ml-6 mr-6">
+                  <i class="fas fa-check text-white text-xl"></i>
+                </button>
+                <div>
+                  <p class="font-medium">Pre-construction meeting</p>
+                </div>
+                <div
+                  class="ml-auto bg-green-500 text-white px-2 font-medium rounded-full hidden sm:inline-block"
+                >
+                  <p>completed</p>
+                </div>
+                <i
+                  class="fas fa-check text-green-900 text-xl sm:hidden ml-auto px-5"
+                ></i>
+                <div class="sm:ml-6 sm:mr-6 sm:inline-block hidden ml-auto">
+                  <p class="font-bold">2/13/2020</p>
+                </div>
+                <div class="sm:ml-6 sm:mr-6 sm:hidden inline-block ml-auto">
+                  <p class="font-bold">2/13/20</p>
+                </div>
+              </div>
+              <div class="flex items-center bg-green-100 my-1 p-3 rounded-md">
+                <button class="bg-green-500 rounded-full px-1 ml-6 mr-6">
+                  <i class="fas fa-check text-white text-xl"></i>
+                </button>
+                <div>
+                  <p class="font-medium">Pre-construction meeting</p>
+                </div>
+                <div
+                  class="ml-auto bg-green-500 text-white px-2 font-medium rounded-full hidden sm:inline-block"
+                >
+                  <p>completed</p>
+                </div>
+                <i
+                  class="fas fa-check text-green-900 text-xl sm:hidden ml-auto px-5"
+                ></i>
+                <div class="sm:ml-6 sm:mr-6 sm:inline-block hidden ml-auto">
+                  <p class="font-bold">2/13/2020</p>
+                </div>
+                <div class="sm:ml-6 sm:mr-6 sm:hidden inline-block ml-auto">
+                  <p class="font-bold">2/13/20</p>
+                </div>
+              </div>
+              <div class="flex items-center bg-green-100 my-1 p-3 rounded-md">
+                <button class="bg-green-500 rounded-full px-1 ml-6 mr-6">
+                  <i class="fas fa-check text-white text-xl"></i>
+                </button>
+                <div>
+                  <p class="font-medium">Pre-construction meeting</p>
+                </div>
+                <div
+                  class="ml-auto bg-green-500 text-white px-2 font-medium rounded-full hidden sm:inline-block"
+                >
+                  <p>completed</p>
+                </div>
+                <i
+                  class="fas fa-check text-green-900 text-xl sm:hidden ml-auto px-5"
+                ></i>
+                <div class="sm:ml-6 sm:mr-6 sm:inline-block hidden ml-auto">
+                  <p class="font-bold">2/13/2020</p>
+                </div>
+                <div class="sm:ml-6 sm:mr-6 sm:hidden inline-block ml-auto">
+                  <p class="font-bold">2/13/20</p>
+                </div>
+              </div>
+
+              <!-- working -->
+              <div class="flex items-center bg-white my-1 p-3 rounded-md">
+                <button
+                  class="border-2 border-gray-400 rounded-full px-1 ml-6 mr-6"
+                >
+                  <i class="fas fa-check text-white text-xl"></i>
+                </button>
+                <div>
+                  <p class="font-medium">Drywal</p>
+                </div>
+                <div
+                  class="ml-auto border-2 border-gray-500 px-2 font-medium rounded-full hidden sm:inline-block"
+                >
+                  <p>project corporation</p>
+                </div>
+                <i
+                  class="fas fa-bookmark text-gray-900 text-xl sm:hidden ml-auto px-5"
+                ></i>
+                <div class="sm:ml-6 sm:mr-6 sm:inline-block hidden ml-auto">
+                  <p class="font-bold">2/13/2020</p>
+                </div>
+                <div class="sm:ml-6 sm:mr-6 sm:hidden inline-block ml-auto">
+                  <p class="font-bold">2/13/20</p>
+                </div>
+              </div>
+              <div class="flex items-center bg-white my-1 p-3 rounded-md">
+                <button
+                  class="border-2 border-gray-400 rounded-full px-1 ml-6 mr-6"
+                >
+                  <i class="fas fa-check text-white text-xl"></i>
+                </button>
+                <div>
+                  <p class="font-medium">Drywal</p>
+                </div>
+                <div
+                  class="ml-auto border-2 border-gray-500 px-2 font-medium rounded-full hidden sm:inline-block"
+                >
+                  <p>project corporation</p>
+                </div>
+                <i
+                  class="fas fa-bookmark text-gray-900 text-xl sm:hidden ml-auto px-5"
+                ></i>
+                <div class="sm:ml-6 sm:mr-6 sm:inline-block hidden ml-auto">
+                  <p class="font-bold">2/13/2020</p>
+                </div>
+                <div class="sm:ml-6 sm:mr-6 sm:hidden inline-block ml-auto">
+                  <p class="font-bold">2/13/20</p>
+                </div>
+              </div>
+              <div></div>
+            </div>
+            <div class="lg:w-1/2 w-full bg-white h-full ml-1 px-5 pt-6 pb-24">
+              <h2 class="font-normal text-2xl mb-5">Picture of your home</h2>
+              <div class="flex items-center flex-wrap w-[85%] mb-5">
+                <img src="./images/shp.jpg" class="w-[70px] mr-2 mt-2" alt="" />
+                <img src="./images/shp.jpg" class="w-[70px] mr-2 mt-2" alt="" />
+                <img src="./images/shp.jpg" class="w-[70px] mr-2 mt-2" alt="" />
+                <img src="./images/shp.jpg" class="w-[70px] mr-2 mt-2" alt="" />
+                <img src="./images/shp.jpg" class="w-[70px] mr-2 mt-2" alt="" />
+                <img src="./images/shp.jpg" class="w-[70px] mr-2 mt-2" alt="" />
+                <img src="./images/shp.jpg" class="w-[70px] mr-2 mt-2" alt="" />
+                <img src="./images/shp.jpg" class="w-[70px] mr-2 mt-2" alt="" />
+                <img src="./images/shp.jpg" class="w-[70px] mr-2 mt-2" alt="" />
+                <img src="./images/shp.jpg" class="w-[70px] mr-2 mt-2" alt="" />
+                <img src="./images/shp.jpg" class="w-[70px] mr-2 mt-2" alt="" />
+                <img src="./images/shp.jpg" class="w-[70px] mr-2 mt-2" alt="" />
+                <img src="./images/shp.jpg" class="w-[70px] mr-2 mt-2" alt="" />
+                <img src="./images/shp.jpg" class="w-[70px] mr-2 mt-2" alt="" />
+              </div>
+              <div class="flex items-center flex-wrap w-[85%]">
+                <img src="./images/shp.jpg" class="w-[70px] mr-2 mt-2" alt="" />
+                <img src="./images/shp.jpg" class="w-[70px] mr-2 mt-2" alt="" />
+                <img src="./images/shp.jpg" class="w-[70px] mr-2 mt-2" alt="" />
+                <img src="./images/shp.jpg" class="w-[70px] mr-2 mt-2" alt="" />
+                <img src="./images/shp.jpg" class="w-[70px] mr-2 mt-2" alt="" />
+                <img src="./images/shp.jpg" class="w-[70px] mr-2 mt-2" alt="" />
+                <img src="./images/shp.jpg" class="w-[70px] mr-2 mt-2" alt="" />
+                <img src="./images/shp.jpg" class="w-[70px] mr-2 mt-2" alt="" />
+                <img src="./images/shp.jpg" class="w-[70px] mr-2 mt-2" alt="" />
+                <img src="./images/shp.jpg" class="w-[70px] mr-2 mt-2" alt="" />
+                <img src="./images/shp.jpg" class="w-[70px] mr-2 mt-2" alt="" />
+                <img src="./images/shp.jpg" class="w-[70px] mr-2 mt-2" alt="" />
+                <img src="./images/shp.jpg" class="w-[70px] mr-2 mt-2" alt="" />
+                <img src="./images/shp.jpg" class="w-[70px] mr-2 mt-2" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="./js/js.js"></script>
+  </body>
+</html>
